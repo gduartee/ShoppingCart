@@ -10,12 +10,12 @@ function SearchBar() {
         <form className="search_bar">
             <input
                 type="search"
+                value={searchValue}
                 placeholder="Buscar produtos"
                 className="search_input"
                 onChange={({ target }) => setSearchValue(target.value)}
                 required
             />
-            {searchValue}
             <button type="submit" className="search_button">
                 <CiSearch />
             </button>
