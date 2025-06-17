@@ -5,16 +5,18 @@ import { BsCartPlus } from "react-icons/bs";
 import './ProductCard.css';
 
 function ProductCard({ data }) {
+    const { product_title, product_price, product_photo } = data;
+
     return (
         <section className="product_card">
 
             <img
-                src="https://m.media-amazon.com/images/I/51fYXSnSu9L._AC_UY654_FMwebp_QL65_.jpg" alt="product"
-                className="card_image" />
+                src={product_photo} alt="product"
+                className="card_image"/>
 
             <div className="card_infos">
-                <h2 className="card_price">R$ 200.20</h2>
-                <h2 className="card_title">titulo do produto</h2>
+                <h2 className="card_price">{product_price}</h2>
+                <h2 className="card_title">{product_title}</h2>
             </div>
 
             <button
@@ -29,5 +31,5 @@ function ProductCard({ data }) {
 export default ProductCard;
 
 ProductCard.propTypes = {
-    data: propTypes.shape({})
+    data: propTypes.shape({}),
 }.isRequired;
