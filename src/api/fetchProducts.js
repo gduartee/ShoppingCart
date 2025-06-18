@@ -5,7 +5,7 @@ const fetchProducts = async (query) => {
         method: 'GET',
         headers: {
             'x-rapidapi-host': 'real-time-amazon-data.p.rapidapi.com',
-            'x-rapidapi-key': '659ffec49fmshffb6dff1b4a0504p1e0619jsn82b9f73b23b3' // substitua por sua key real
+            'x-rapidapi-key': '659ffec49fmshffb6dff1b4a0504p1e0619jsn82b9f73b23b3'
         }
     };
 

@@ -7,10 +7,11 @@ import AppContext from "../../context/AppContext";
 
 function ProductCard({ data }) {
     const { product_title, product_price, product_photo } = data;
-    const { cartItens, setCartItens } = useContext(AppContext);
+    const { cartItens, setCartItens, setIsCartVisible } = useContext(AppContext);
 
     const handleAddCart = () => {
         setCartItens([...cartItens, data]);
+        setIsCartVisible(true);
     }
 
     return (
