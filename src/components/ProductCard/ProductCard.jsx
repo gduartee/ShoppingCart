@@ -1,18 +1,24 @@
-import React from "react";
+import React, { useContext } from "react";
 import propTypes from 'prop-types';
 import { BsCartPlus } from "react-icons/bs";
 
 import './ProductCard.css';
+import AppContext from "../../context/AppContext";
 
 function ProductCard({ data }) {
     const { product_title, product_price, product_photo } = data;
+    const { cartItens, setCartItens } = useContext(AppContext);
+
+    const handleAddCart = () => {
+        setCartItens([...cartItens, data]);
+    }
 
     return (
         <section className="product_card">
 
             <img
                 src={product_photo} alt="product"
-                className="card_image"/>
+                className="card_image" />
 
             <div className="card_infos">
                 <h2 className="card_price">{product_price}</h2>
@@ -20,7 +26,10 @@ function ProductCard({ data }) {
             </div>
 
             <button
-                type="button" className="button_add-cart">
+                type="button"
+                className="button_add-cart"
+                onClick={handleAddCart}
+            >
                 <BsCartPlus />
             </button>
 
